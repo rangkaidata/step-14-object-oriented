@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Aplikasi Akuntansi</title>
+	</head>
+<body>
+	<h4 style='color:red'>App Step 14: object-oriented</h4>
+	<div id="menu">Menu</div>
+	<div id="sub_menu" style="display:none;">Submenu</div>
+	<h1 id="modul">Modul</h1>
+	<h2 id="metode">Metode</h2>
+	<h4 id="msg">Message</h4>
+	<div id="btn">Button</div>
+	<div id="app">Data app</div>
+
+	<script src="js/function.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/register.js"></script>
+	<script src="js/forgot.js"></script>
+	<script src="js/home.js"></script>
+	<script src="js/index.js"></script>	
+	<script>
+		// https://www.w3schools.com/js/js_performance.asp
+		// PENTING!!! agar 'script js' yg tidak digunakan, tidak aktif/diikutkan.
+		// hanya 'script js' aktif yg dipanggil.
+		window.onload = function() {
+			loginRead();
+			
+			var element = document.createElement("script");
+			var element2=document.createElement("script");
+			switch (modul_aktif){
+			case 'logout':
+				element.src = "js/logout.js";
+				break;
+			case 'company':
+				element.src = "js/company.js";
+				element2.src="js/image.js";
+				break;
+			case 'blok':
+				element.src = "js/blok.js";
+				break;
+			case 'notes':
+				element.src = "js/notes.js";
+				break;
+			case 'default':
+				element.src = "js/default.js";
+				break;
+			case 'user_profile':
+				element.src = "js/user_profile.js";
+				element2.src="js/image.js";
+				break;
+			case 'company_profile':
+				element.src = "js/company_profile.js";
+				break;
+			case 'accounts':
+				element.src = "js/accounts.js";
+				break;
+			case 'manage_users':
+				element.src = "js/manage_users.js";
+				break;
+			case 'join_user':
+				element.src = "js/join_user.js";
+				break;				
+			}
+
+			document.body.appendChild(element);
+			document.body.appendChild(element2);
+		};
+		
+	</script>
+</body>
+</html> 
